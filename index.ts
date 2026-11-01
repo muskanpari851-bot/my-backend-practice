@@ -1,14 +1,25 @@
-import express from "express";
-const app = express();
-app.use("/home", (req, res) => {
-    res.status(200).json("iam muskan");
+import http,{ServerResponse, IncomingMessage} from "http";
+
+
+const server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
+    if(req.url === "/home") {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end("Hello, World!");
+    }   
+    if(req.url === "/about") {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end("About Page");
+    }
+    else if(req.url === "/contact") {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end("Contact Page");
+    }
+    else {
+        res.writeHead(404, { "Content-Type": "text/plain" });
+        res.end("Page Not Found");
+    }   
 });
-app.use("/about", (req, res) => {
-    res.status(200).json("iam inter student");
-});
-app.use("/contact", (req, res) => {
-    res.status(200).json("iam interested in web development");
-});
-app.listen(3000, () => {
+
+server.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
