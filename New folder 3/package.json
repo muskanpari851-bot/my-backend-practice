@@ -1,0 +1,22 @@
+{
+  "name": "new-folder-3",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "muskan tahir",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node dist/index 2.ts"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "express": "^5.3.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
